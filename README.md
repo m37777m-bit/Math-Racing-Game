@@ -1,6 +1,6 @@
 # Math-Racing-Game
 
-Authors: Montserrat Mata & Shannon
+Authors: Montserrat Mata & Shannon Liu
 
 # Math Racer
 
