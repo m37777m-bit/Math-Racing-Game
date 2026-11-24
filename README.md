@@ -63,6 +63,8 @@ math-racer/
 │
 ├── player.h
 ├── player.cpp
+├── playermanager.h
+├── playermanager.cpp
 │
 ├── mathproblem.h
 ├── mathproblem.cpp
