@@ -72,6 +72,7 @@ math-racer/
 ├── mediumproblem.cpp
 ├── hardproblem.h
 ├── hardproblem.cpp
+├── Test_MathProblems.cpp
 │
 ├── race.h
 ├── race.cpp
@@ -127,11 +128,3 @@ math-racer.exe
 7. View your race results and leaderboard rankings.
 8. Choose to race again or exit.
 
-## Development Team
-
-- Team Member A: Player management, registration, placement testing, and data storage.
-- Team Member B: Math question generation, racing mechanics, terminal interface, and leaderboard implementation.
-
-## Project Status
-
-Currently in development. Features and documentation will be updated as implementation progresses.
