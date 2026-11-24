@@ -13,4 +13,5 @@ class Race {
     void displayTrack();
     private:
     Player &player;
+    int position;
 }
