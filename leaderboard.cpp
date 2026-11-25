@@ -41,7 +41,7 @@ void leaderboard:: displayLeaderBoard()
 }
 void leaderboard:: saveToFile()//console -> txt/vector
 {
-    ofstream outfile(leaderboard.txt);
+    ofstream outfile("data/leaderboard.txt");
     if(!outfile)
     {
         cout <<"ERROR OPENING FILE: leaderboard.txt" <<endl;
@@ -62,7 +62,7 @@ void leaderboard:: LoadtoFile() //txt -> console/vector
 {
     string username;
     int score;
-    ifstream infile(leaderboard.txt)
+    ifstream infile("data/leaderboard.txt")
     if(!infile)
     {
         cout <<"ERROR OPENING FILE: leaderboard.txt" <<endl;

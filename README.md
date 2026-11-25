@@ -65,7 +65,6 @@ math-racer/
 ├── player.cpp
 ├── playermanager.h
 ├── playermanager.cpp
-├── DataBase.txt
 │
 ├── mathproblem.h
 ├── mathproblem.cpp
@@ -82,11 +81,11 @@ math-racer/
 │
 ├── leaderboard.h
 ├── leaderboard.cpp
-├── leaderboard.txt
 │
 ├── data/
 │   ├── players.txt
-│   └── races.txt
+│   ├── races.txt
+|   └── leaderboard.txt
 │
 └── README.md
 ```
