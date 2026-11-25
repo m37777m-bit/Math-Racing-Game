@@ -1,6 +1,6 @@
-
 #include <iostream>
 #include <string>
+#include <chrono>
 
 #include "race.h"
 #include "mathproblem.h"
@@ -47,6 +47,8 @@ void Race::startRace()
 {
     int score = 0;
     int user_response = 0;
+    int position = 0;
+    auto startTime = chrono::steady_clock::now();
 
     const int totalQuestions = 10;
 
@@ -62,24 +64,24 @@ void Race::startRace()
     for (int i = 0; i < totalQuestions; i++)
     {
         
-        MathProblem* question = nullptr;
+        Mathproblem* question = nullptr;
 
        
         switch (player.getDifficulty()[0])
         {
             case 'E':
             case 'e':
-                question = new EasyProblem();
+                question = new Easyproblem();
                 break;
 
             case 'M':
             case 'm':
-                question = new MediumProblem();
+                question = new Mediumproblem();
                 break;
 
             case 'H':
             case 'h':
-                question = new HardProblem();
+                question = new Hardproblem();
                 break;
 
             default:
@@ -95,7 +97,7 @@ void Race::startRace()
         cout << "RESPONSE: ";
         cin >> user_response;
 
-        if (question->correctAnswer() == user_response)
+        if (question->checkAnswer(user_response))
         {
             cout << "CORRECT!" << endl;
             score++;
@@ -124,6 +126,12 @@ void Race::startRace()
         }
     }
 
+    auto endTime = chrono::steady_clock::now();
+
+    double elapsedTime = chrono::duration<double>(endTime - startTime).count();
+
+    player.updateRaceResult(score, elapsedTime);
+
     cout << "\n========== RACE RESULTS ==========\n";
 
     cout << "Player: " << player.getUsername() << endl;
@@ -133,6 +141,8 @@ void Race::startRace()
 
     cout << "Final Position: "
          << position << "/" << TRACK_LENGTH << endl;
+
+    cout << "Race Time: " << elapsedTime << " seconds" << endl;
 
     if (position >= TRACK_LENGTH)
     {

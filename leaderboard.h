@@ -5,7 +5,7 @@
 #include<vector>
 
 
-using namepace std;
+using namespace std;
 
 struct LeaderboardEntry
 {
@@ -30,6 +30,8 @@ class Leaderboard
     vector<LeaderboardEntry> rankings;
 
 };
+
+#endif
 
 
 

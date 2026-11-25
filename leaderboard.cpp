@@ -5,26 +5,26 @@
 using namespace std;
 
 
-void leaderboard:: addentry(string username, int score)
+void Leaderboard:: addentry(string username, int score)
 {
     rankings.push_back( LeaderboardEntry(username,score));
 }
-void leaderboard:: sortLeaderboard()
+void Leaderboard:: sortLeaderboard()
 {
     
     const int SIZE= rankings.size();
     for (int i =0; i<SIZE-1; i++)
     {
-        for(int n=i+1; i<SIZE; n++)
+        for(int n=i+1; n<SIZE; n++)
         {
-            if (rankings[i].score <rankings[i].score)
+            if (rankings[i].score < rankings[n].score)
             {
                 swap(rankings[n],rankings[i]);
             }
         }
     }
 } 
-void leaderboard:: displayLeaderBoard()
+void Leaderboard:: displayLeaderBoard()
 {
     cout <<"+++++++++++++++++++++++++++++" <<endl;
     cout <<"         LEADERBOARD         " <<endl;
@@ -39,7 +39,7 @@ void leaderboard:: displayLeaderBoard()
 
     
 }
-void leaderboard:: saveToFile()//console -> txt/vector
+void Leaderboard:: saveToFile()//console -> txt/vector
 {
     ofstream outfile("data/leaderboard.txt");
     if(!outfile)
@@ -55,20 +55,20 @@ void leaderboard:: saveToFile()//console -> txt/vector
         outfile<< username <<" " << score <<endl;
     }
 
-    close.outfile();
+    outfile.close();
 
 }
-void leaderboard:: LoadtoFile() //txt -> console/vector
+void Leaderboard:: LoadtoFile() //txt -> console/vector
 {
     string username;
     int score;
-    ifstream infile("data/leaderboard.txt")
+    ifstream infile("data/leaderboard.txt");
     if(!infile)
     {
         cout <<"ERROR OPENING FILE: leaderboard.txt" <<endl;
         return;
     }
-    while( infile >>username>> score;)
+    while( infile >>username>> score)
     {
         rankings.push_back(LeaderboardEntry(username,score));
     }
