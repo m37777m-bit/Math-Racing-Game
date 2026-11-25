@@ -3,7 +3,7 @@
 
 #include<iostream>
 #include <string>
-#include "Player.cpp"
+#include "player.h"
 using namespace std;
 
 class Race {
@@ -15,3 +15,5 @@ class Race {
     Player &player;
     int position;
 }
+
+#endif
