@@ -18,36 +18,53 @@ Race::Race(Player& selected_player)
 {
 }
 
+static const char* getCarEmoji(string carChoice)
+{
+    if (carChoice == "Racing Car")
+        return "\U0001F3CE";
+
+    else if (carChoice == "Sports Car")
+        return "\U0001F697";
+
+    else if (carChoice == "Formula Car")
+        return "\U0001F3CE";
+
+    else if (carChoice == "Classic Car")
+        return "\U0001F695";
+
+    return "\U0001F697";
+}
+ 
 void Race::displayTrack()
 {
-    cout << "\n========== MATH RACER ==========\n\n";
+   cout << "\n========== MATH RACER ==========\n\n";
+
+   
+    const char* car = getCarEmoji(player.getCarChoice());
 
     cout << "START ";
 
     for (int i = 0; i < TRACK_LENGTH; i++)
     {
-        cout << "-";
+        if (i == position)
+            cout << car;
+        else
+            cout << "-";
     }
 
     cout << " FINISH\n";
-
-   
-    for (int i = 0; i < position; i++)
-    {
-        cout << " ";
-    }
-
-    cout << player.getCarChoice() << endl;
 
     cout << "\nProgress: " << position
          << "/" << TRACK_LENGTH << endl;
 }
 
+
+
 void Race::startRace()
 {
     int score = 0;
-    int user_response = 0;
-    int position = 0;
+    
+    double user_response = 0;
     auto startTime = chrono::steady_clock::now();
 
     const int totalQuestions = 10;
@@ -93,7 +110,7 @@ void Race::startRace()
         cout << "QUESTION " << i + 1 << "/"
              << totalQuestions << endl;
 
-        cout << question->generateQuestion() << endl;
+        question->generateQuestion();
         cout << "RESPONSE: ";
         cin >> user_response;
 

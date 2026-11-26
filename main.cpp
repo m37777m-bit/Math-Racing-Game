@@ -2,6 +2,7 @@
 #include <string>
 #include <limits>
 #include <chrono>
+#include <windows.h>
 #include <fstream>
 #include <sstream>
 
@@ -13,7 +14,7 @@
 
 using namespace std;
 
-// Read a number without crashing on invalid input.
+
 bool readNumber(int& number) {
     if (!(cin >> number)) {
         if (cin.eof()) return false;
@@ -317,6 +318,9 @@ void playerMenu(Player& player, PlayerManager& manager) {
 }
 
 int main() {
+
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     PlayerManager manager;
 
     if (!manager.loadPlayers()) {
