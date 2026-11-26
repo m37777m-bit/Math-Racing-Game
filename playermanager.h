@@ -20,3 +20,5 @@ class PlayerManager {
         void displayRegistration();
         void displayLogin();
 };
+
+#endif

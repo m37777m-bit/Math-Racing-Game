@@ -41,7 +41,7 @@ bool PlayerManager::registerPlayer(string username) {
 }
 
 bool PlayerManager::savePlayers() {
-    ofstream playerRecord("players.txt");
+    ofstream playerRecord("data/player.txt");
 
     if (!playerRecord) {
         return false;
@@ -67,7 +67,7 @@ bool PlayerManager::savePlayers() {
 }
 
 bool PlayerManager::loadPlayers() {
-    ifstream playerRecord("players.txt");
+    ifstream playerRecord("data/player.txt");
 
     if (!playerRecord.is_open()) {
         gamePlayers.clear();

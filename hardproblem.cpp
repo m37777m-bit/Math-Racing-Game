@@ -66,6 +66,7 @@ void Hardproblem::generateQuestion()
             correctAnswer = a + (b / c) * d + a;
             break;
     }
-
+   
     cout << question << endl;
+    
 }

@@ -63,6 +63,8 @@ math-racer/
 │
 ├── player.h
 ├── player.cpp
+├── playermanager.h
+├── playermanager.cpp
 │
 ├── mathproblem.h
 ├── mathproblem.cpp
@@ -82,12 +84,13 @@ math-racer/
 │
 ├── data/
 │   ├── players.txt
-│   └── races.txt
+│   ├── races.txt
+|   └── leaderboard.txt
 │
 └── README.md
 ```
 
-*Note: The structure may change as development progresses.*
+
 
 ## How to Compile and Run
 
