@@ -94,31 +94,48 @@ math-racer/
 
 ## How to Compile and Run
 
+## Compilation and Execution
+
 ### Requirements
-- A C++ compiler (such as g++).
-- Visual Studio Code or another C++ development environment.
+- C++ compiler (G++ recommended)
+- C++17 or later
+- Windows users: [MSYS2](https://www.msys2.org/) with the UCRT64 environment
 
-### Compilation
+### Compile the Project
 
-From the project directory, compile the source files:
+Open a terminal in the project's root directory (the directory containing `main.cpp`).
 
-```bash
-g++ -std=c++17 *.cpp -o math-racer
-```
-
-### Run
-
-On macOS or Linux:
+Run the following command:
 
 ```bash
-./math-racer
+g++ -std=c++17 -Wall -Wextra main.cpp race.cpp leaderboard.cpp mathproblem.cpp easyproblem.cpp mediumproblem.cpp hardproblem.cpp playermanager.cpp player.cpp -o mathgame
 ```
 
-On Windows:
+### Run the Game
 
+**Windows (PowerShell):**
+```powershell
+.\mathgame.exe
+```
+
+**Linux / macOS:**
 ```bash
-math-racer.exe
+./mathgame
 ```
+
+### Player Data
+
+The game stores player information in:
+
+```text
+data/players.txt
+```
+
+This file stores usernames, difficulty levels, placement results, best race scores, race times, total races, and selected cars.
+
+## Terminal Compatibility
+
+The racing game uses Unicode emoji characters to display cars on the racing track.For the best visual experience:Use a terminal that supports UTF-8 encoding.Use a font that supports emoji rendering.On Windows, Windows Terminal or the VS Code integrated terminal is recommended.Emoji appearance may vary depending on the operating system and terminal font. If emojis are not supported, some characters may appear as boxes or question marks.
 
 ## How to Play
 
